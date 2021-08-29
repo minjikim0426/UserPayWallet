@@ -1,0 +1,6 @@
+module Pods_paywalletFront {
+  umbrella header "Pods-paywalletFront-umbrella.h"
+
+  export *
+  module * { export * }
+}

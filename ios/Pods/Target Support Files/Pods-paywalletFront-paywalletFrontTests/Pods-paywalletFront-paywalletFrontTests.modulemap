@@ -1,0 +1,6 @@
+module Pods_paywalletFront_paywalletFrontTests {
+  umbrella header "Pods-paywalletFront-paywalletFrontTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

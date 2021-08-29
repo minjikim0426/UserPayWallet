@@ -1,0 +1,14 @@
+com/paywalletfront/ReactNativeFlipper.java
+ com.paywalletfront.ReactNativeFlipper
+ com.paywalletfront.ReactNativeFlipper$1
+ com.paywalletfront.ReactNativeFlipper$2
+ com.paywalletfront.ReactNativeFlipper$2$1
+com/paywalletfront/MainApplication.java
+ com.paywalletfront.MainApplication
+ com.paywalletfront.MainApplication$1
+com/paywalletfront/BuildConfig.java
+ com.paywalletfront.BuildConfig
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/paywalletfront/MainActivity.java
+ com.paywalletfront.MainActivity

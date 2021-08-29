@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "626795363302",
+    "firebase_url": "https://paywallet-98f33-default-rtdb.firebaseio.com",
+    "project_id": "paywallet-98f33",
+    "storage_bucket": "paywallet-98f33.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626795363302:android:f16b8a3f1069558b92b427",
+        "android_client_info": {
+          "package_name": "com.paywalletfront"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626795363302-spmvfgdo2ipo8306ia7fo9fgk7kr586q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paywalletfront",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "626795363302-fso92e3gts2qu8v2l33s78kalla5eb49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKw4GDJPUSAzK3AWhOlFHrBBC3hiwOKx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626795363302-fso92e3gts2qu8v2l33s78kalla5eb49.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
