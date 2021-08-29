@@ -6,10 +6,10 @@ import auth from '@react-native-firebase/auth';
 import moment from 'moment';
 
 const defaultContext: IUserDataContext = {
-  //info: undefined,
+  info: undefined,
   category: undefined,
   month: undefined,
-  //ListData: (select_month: string) => {},
+  ListData: (select_month: string) => {},
   getMonthSum: (select_category: string) => {},
   getCategorySum: (select_month: string) => {},
   getPercentage: (select_category: string) => {},
@@ -28,14 +28,17 @@ const UserDataContextProvider = ({children}: Props) => {
   const [info, setInfo] = useState([]);
   const [percentage, setPercentage] = useState([]);
 
-  /*
+  
   //List
   const ListData = async (select_month: string) => {
     var user_data = [];
     let user = auth().currentUser;
     var DataRef = database().ref(`user_wallet/${user.uid}`);
-    var list_data = [];
+  
+    var list_data = [[0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0],[0,0,0],
+    [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0],[0,0,0]];
 
+    var count = 0;
     try {
       DataRef.on('value', snapshot => {
         snapshot.forEach(child => {
@@ -53,23 +56,20 @@ const UserDataContextProvider = ({children}: Props) => {
           var newDate = moment(Date * 1000).format('MM/DD/YYYY hh:MM');
           var month = newDate.slice(0, 2);
   
-          for (var j = 0; j<10; j++){
-            if (month == select_month) {
-              list_data[j] = user_data[i];
-            }
-          }
+          if (month == select_month) {
+            list_data[count][0] = user_data[i].shop;
+            list_data[count][1] = user_data[i].category;
+            list_data[count][2] = user_data[i].money;
+            count++;
+          } 
         }
         setInfo(list_data);
-        //console.log(select_month);
-        //console.log(list_data);
       });
-      //setIsLoading(true);
     } catch (e) {
       console.log(e);
       Alert.alert(e);
     }
   };
-*/
 
   // LineChart
   const getMonthSum = async (select_category: string) => {
@@ -232,9 +232,9 @@ const UserDataContextProvider = ({children}: Props) => {
         }
         
         setPercentage(classified_amount);
-        console.log('현재 선택된 month : '+select_month);
-        console.log(category_sum);
-        console.log(classified_amount);
+        //console.log('현재 선택된 month : '+select_month);
+        //console.log(category_sum);
+        //console.log(classified_amount);
       });
     } catch (e) {
       console.log(e);
@@ -244,7 +244,7 @@ const UserDataContextProvider = ({children}: Props) => {
 
 
   useEffect(() => {
-    //ListData('09');
+    ListData('09');
     getMonthSum('카페');
     getCategorySum('09');
     getPercentage('09');
@@ -254,11 +254,11 @@ const UserDataContextProvider = ({children}: Props) => {
     <UserDataContext.Provider
       value={
         {
-          //info,
+          info,
           category,
           month,
           percentage,
-          //ListData,
+          ListData,
           getMonthSum,
           getCategorySum,
           getPercentage,

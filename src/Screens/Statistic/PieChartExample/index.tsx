@@ -21,6 +21,13 @@ const Percentage_Info = Styled.Text`
   color: white;
 `;
 
+const circle = Styled.Text`
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: 'red';
+`;
+
 /* Pie Chart */
 const PieChartExample = () => {
   const { percentage, getPercentage} = useContext<IUserDataContext>(UserDataContext);
@@ -99,7 +106,7 @@ const PieChartExample = () => {
       <View>
         <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> ❤️: 공공,사회기관 ({percentage[0]}%)    🧡 : 공과금 ({percentage[1]}%)    💛 : 교육,육아 ({percentage[2]}%)</Percentage_Info>
         <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> 💚 : 교통,운수 ({percentage[3]}%)    💙 : 레저,스포츠 ({percentage[4]}%)    💜 : 병원,약국 ({percentage[5]}%)</Percentage_Info>
-        <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> 🖤 : 뷰티 ({percentage[6]}%)    ⚪️: 쇼핑 ({percentage[7]}%)    🟤 : 식료품 ({percentage[8]}%)</Percentage_Info>
+        <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> 🖤 : 뷰티 ({percentage[6]}%)    ⚪️: 쇼핑 ({percentage[7]}%)    🟫 : 식료품 ({percentage[8]}%)</Percentage_Info>
         <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> ⚫️ : 애완동물 ({percentage[9]}%)    ⚪️: 여행,숙박 ({percentage[10]}%)    🟤 : 음식점 ({percentage[11]}%)   </Percentage_Info>
         <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> ⚫️ : 카페 ({percentage[12]}%) </Percentage_Info>
       </View>
