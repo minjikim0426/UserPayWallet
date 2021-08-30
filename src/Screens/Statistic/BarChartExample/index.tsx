@@ -15,7 +15,7 @@ const BarChartExample = () => {
 
     const { month, getCategorySum } = useContext<IUserDataContext>(UserDataContext);
   
-    const categories = ['2021년 01월', '2021년 02월', '2021년 03월', '2021년 04월', '2021년 05월', '2021년 06월', '2021년 07월', '2021년 08월', '2021년 09월', '2021년 10월', '2021년 11월', '2021년 12월']
+    const categories = ['2021년 01월', '2021년 02월', '2021년 03월', '2021년 04월', '2021년 05월', '2021년 06월', '2021년 07월', '2021년 08월', '2021년 09월']
     const [category, setCategory] = useState('');
 
   return (
@@ -32,9 +32,6 @@ const BarChartExample = () => {
           if (selectedItem == categories[6]) select_month = '07';
           if (selectedItem == categories[7]) select_month = '08';
           if (selectedItem == categories[8]) select_month = '09';
-          if (selectedItem == categories[9]) select_month = '10';
-          if (selectedItem == categories[10]) select_month = '11';
-          if (selectedItem == categories[11]) select_month = '12';
 
           getCategorySum(select_month);
           setCategory(selectedItem);

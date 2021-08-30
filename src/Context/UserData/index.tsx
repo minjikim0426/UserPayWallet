@@ -110,9 +110,9 @@ const UserDataContextProvider = ({children}: Props) => {
               if (month == '07') { month_sum[6] += Number(user_data[i].money);}
               if (month == '08') { month_sum[7] += Number(user_data[i].money);}
               if (month == '09') { month_sum[8] += Number(user_data[i].money);}
-              if (month == '10') { month_sum[9] += Number(user_data[i].money); }
-              if (month == '11') { month_sum[10] += Number(user_data[i].money);}
-              if (month == '12') { month_sum[11] += Number(user_data[i].money);}
+              //if (month == '10') { month_sum[9] += Number(user_data[i].money); }
+              //if (month == '11') { month_sum[10] += Number(user_data[i].money);}
+              //if (month == '12') { month_sum[11] += Number(user_data[i].money);}
             }
           }
           setCategory(month_sum);

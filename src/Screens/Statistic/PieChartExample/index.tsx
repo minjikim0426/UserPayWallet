@@ -42,9 +42,6 @@ const PieChartExample = () => {
     '2021년 07월',
     '2021년 08월',
     '2021년 09월',
-    //'2021년 10월',
-    //'2021년 11월',
-    //'2021년 12월',
   ];
   const [category, setCategory] = useState('');
 
@@ -70,10 +67,10 @@ const PieChartExample = () => {
           setCategory(selectedItem);
         }}
         defaultButtonText="날짜 선택"
-        buttonStyle={{marginBottom: 10, width: 300, height:35, paddingRight:10, margin: 65, marginTop:0}}
+        buttonStyle={{marginBottom: 5, width: 300, height:35, paddingRight:10, margin: 65, marginTop:0}}
         />
     
-    <View style={{height:280, padding:30, flexDirection: 'row'}}>
+    <View style={{height:260, padding:30, flexDirection: 'row'}}>
         <Text style= {{ color: Colors.white, fontSize: 17 }}>        [ {select_month} 월 ] 지출 분류별 지출 내역 </Text>
         <SafeAreaView style={{ flex: 1}}>
           <View style={styles.container}>
@@ -92,8 +89,8 @@ const PieChartExample = () => {
                     { percentage: percentage[8], color: '#A52A2A' }, //갈색
                     { percentage: percentage[9], color: '#BDB76B' }, 
                     { percentage: percentage[10], color: '#FF8C00' },
-                    { percentage: percentage[11], color: '#FF1493' },
-                    { percentage: percentage[12], color: '#FFD700' },
+                    { percentage: percentage[11], color: '#FFDAB9' },
+                    { percentage: percentage[12], color: '#00FFFF' },
                   ]}
                   strokeCap={'butt'}
                   autopct={'%1.2f%%'}
@@ -104,11 +101,49 @@ const PieChartExample = () => {
     </View>
     <View style={{borderTopColor: '#aaa', borderTopWidth: 0.5, flexDirection: 'row'}}>
       <View>
-        <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> ❤️: 공공,사회기관 ({percentage[0]}%)    🧡 : 공과금 ({percentage[1]}%)    💛 : 교육,육아 ({percentage[2]}%)</Percentage_Info>
-        <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> 💚 : 교통,운수 ({percentage[3]}%)    💙 : 레저,스포츠 ({percentage[4]}%)    💜 : 병원,약국 ({percentage[5]}%)</Percentage_Info>
-        <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> 🖤 : 뷰티 ({percentage[6]}%)    ⚪️: 쇼핑 ({percentage[7]}%)    🟫 : 식료품 ({percentage[8]}%)</Percentage_Info>
-        <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> ⚫️ : 애완동물 ({percentage[9]}%)    ⚪️: 여행,숙박 ({percentage[10]}%)    🟤 : 음식점 ({percentage[11]}%)   </Percentage_Info>
-        <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}> ⚫️ : 카페 ({percentage[12]}%) </Percentage_Info>
+        <Text style={{color: '#C70039', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+          <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 공공,사회기관 ({percentage[0]}%)   </Percentage_Info>
+          <Text style={{color: '#FFA500', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 공과금 ({percentage[1]}%)    </Percentage_Info>
+          </Text> 
+          <Text style={{color: '#FFFF00', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 교육,육아 ({percentage[2]}%)</Percentage_Info>
+          </Text> 
+        </Text>
+
+        <Text style={{color: '#228B22', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+          <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 교통,운수 ({percentage[3]}%)    </Percentage_Info>
+          <Text style={{color: '#0000FF', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 레저,스포츠 ({percentage[4]}%)     </Percentage_Info>
+          </Text> 
+          <Text style={{color: '#800080', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 병원,약국 ({percentage[5]}%)</Percentage_Info>
+          </Text> 
+        </Text>
+
+        <Text style={{color: '#000000', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+          <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 뷰티 ({percentage[6]}%)    </Percentage_Info>
+          <Text style={{color: '#FFFFFF', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 쇼핑 ({percentage[7]}%)     </Percentage_Info>
+          </Text> 
+          <Text style={{color: '#A52A2A', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 식료품 ({percentage[8]}%)    </Percentage_Info>
+          </Text> 
+          <Text style={{color: '#BDB76B', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 애완동물 ({percentage[9]}%)</Percentage_Info>
+          </Text>
+        </Text>
+
+        <Text style={{color: '#FF8C00', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+          <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 여행,숙박 ({percentage[10]}%)     </Percentage_Info>
+          <Text style={{color: '#FFDAB9', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 음식점 ({percentage[11]}%)      </Percentage_Info>
+          </Text> 
+          <Text style={{color: '#00FFFF', fontSize: 30, fontWeight: 'bold', paddingLeft: 15}}>_
+            <Percentage_Info style= {{ color: Colors.white, fontSize: 12 }}>  : 카페 ({percentage[12]}%)</Percentage_Info>
+          </Text> 
+        </Text>
+
       </View>
     </View>
     </View>
