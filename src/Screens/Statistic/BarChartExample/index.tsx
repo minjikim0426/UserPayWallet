@@ -15,7 +15,7 @@ const BarChartExample = () => {
 
     const { month, getCategorySum } = useContext<IUserDataContext>(UserDataContext);
   
-    const categories = ['2021년 01월', '2021년 02월', '2021년 03월', '2021년 04월', '2021년 05월', '2021년 06월', '2021년 07월', '2021년 08월', '2021년 09월']
+    const categories = ['2021년 01월', '2021년 02월', '2021년 03월', '2021년 04월', '2021년 05월', '2021년 06월', '2021년 07월', '2021년 08월', '2021년 09월', '2021년 10월', '2021년 11월', '2021년 12월']
     const [category, setCategory] = useState('');
 
   return (
@@ -23,16 +23,19 @@ const BarChartExample = () => {
       <SelectDropdown  
         data={categories}
         onSelect={(selectedItem, index) =>{
-          if (selectedItem == categories[0]) select_month = '01';
-          if (selectedItem == categories[1]) select_month = '02';
-          if (selectedItem == categories[2]) select_month = '03';
-          if (selectedItem == categories[3]) select_month = '04';
-          if (selectedItem == categories[4]) select_month = '05';
-          if (selectedItem == categories[5]) select_month = '06';
-          if (selectedItem == categories[6]) select_month = '07';
-          if (selectedItem == categories[7]) select_month = '08';
-          if (selectedItem == categories[8]) select_month = '09';
-
+          if (selectedItem == categories[0]) select_month = '1';
+          if (selectedItem == categories[1]) select_month = '2';
+          if (selectedItem == categories[2]) select_month = '3';
+          if (selectedItem == categories[3]) select_month = '4';
+          if (selectedItem == categories[4]) select_month = '5';
+          if (selectedItem == categories[5]) select_month = '6';
+          if (selectedItem == categories[6]) select_month = '7';
+          if (selectedItem == categories[7]) select_month = '8';
+          if (selectedItem == categories[8]) select_month = '9';
+          if (selectedItem == categories[9]) select_month = '10';
+          if (selectedItem == categories[10]) select_month = '11';
+          if (selectedItem == categories[11]) select_month = '12';
+        
           getCategorySum(select_month);
           setCategory(selectedItem);
         }}
@@ -54,7 +57,7 @@ const BarChartExample = () => {
             formatLabel={value => `${value}`}
           />
           <BarChart 
-              style={{ height: 250, width: 300, backgroundColor:'#2c3e50', paddingLeft: 0 }} 
+              style={{ height: 250, width: 300, backgroundColor:'#2c3e50', paddingLeft: 15 }} 
               data={month} svg={{ fill: 'red' }} 
               contentInset={{ top: 30, bottom: 30 }}>
             <Grid /> 

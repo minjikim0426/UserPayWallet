@@ -1,5 +1,5 @@
 import React, {useState, useContext } from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, ScrollView} from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {UserDataContext} from '~/Context/UserData';
@@ -22,14 +22,14 @@ const List = () => {
 
     for (let j = 0; j < count; j++) {
       result.push(
-        <View
-          style={{
-            padding: 15,
-            borderBottomColor: '#aaa',
-            borderBottomWidth: 1,
-            flexDirection: 'row',
-            paddingBottom: 20,
-          }}>
+          <View
+            style={{
+              padding: 15,
+              borderBottomColor: '#aaa',
+              borderBottomWidth: 1,
+              flexDirection: 'row',
+              paddingBottom: 20,
+            }}>
   
         
         <Text
@@ -42,7 +42,7 @@ const List = () => {
         </Text>
         <Text
           style={{flex: 1, padding: 5, paddingLeft: 30, color: Colors.white}}>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{info[j][2]}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{info[j][2]}원
         </Text>
       </View>
       );
@@ -51,7 +51,7 @@ const List = () => {
   };
 
   const { info, ListData } = useContext<IUserDataContext>(UserDataContext);
-  console.log(info);
+  //console.log(info);
 
   const categories = [
     '2021년 01월',
@@ -63,30 +63,31 @@ const List = () => {
     '2021년 07월',
     '2021년 08월',
     '2021년 09월',
-    //'2021년 10월',
-    //'2021년 11월',
-    //'2021년 12월',
+    '2021년 10월',
+    '2021년 11월',
+    '2021년 12월',
   ];
   const [category, setCategory] = useState('');
 
   for (var j=0; j<info.length; j++){
     return (
+      <ScrollView>
       <View>
         <SelectDropdown
           data={categories}
           onSelect={(selectedItem, index) => {
-            if (selectedItem == categories[0]) { select_month = '01'; }
-            if (selectedItem == categories[1]) { select_month = '02'; }
-            if (selectedItem == categories[2]) { select_month = '03'; }
-            if (selectedItem == categories[3]) { select_month = '04'; }
-            if (selectedItem == categories[4]) { select_month = '05'; }
-            if (selectedItem == categories[5]) { select_month = '06'; }
-            if (selectedItem == categories[6]) { select_month = '07'; }
-            if (selectedItem == categories[7]) { select_month = '08'; }
-            if (selectedItem == categories[8]) { select_month = '09'; }
-            //if (selectedItem == categories[9]) { select_month = '10'; }
-            //if (selectedItem == categories[10]) { select_month = '11'; }
-            //if (selectedItem == categories[11]) { select_month = '12'; }
+            if (selectedItem == categories[0]) { select_month = '1'; }
+            if (selectedItem == categories[1]) { select_month = '2'; }
+            if (selectedItem == categories[2]) { select_month = '3'; }
+            if (selectedItem == categories[3]) { select_month = '4'; }
+            if (selectedItem == categories[4]) { select_month = '5'; }
+            if (selectedItem == categories[5]) { select_month = '6'; }
+            if (selectedItem == categories[6]) { select_month = '7'; }
+            if (selectedItem == categories[7]) { select_month = '8'; }
+            if (selectedItem == categories[8]) { select_month = '9'; }
+            if (selectedItem == categories[9]) { select_month = '10'; }
+            if (selectedItem == categories[10]) { select_month = '11'; }
+            if (selectedItem == categories[11]) { select_month = '12'; }
   
             ListData(select_month);
             setCategory(selectedItem);
@@ -126,8 +127,10 @@ const List = () => {
           }}>
   
           {rendering()}
+       
       </View>
     </View>
+    </ScrollView>
     );
   }
   

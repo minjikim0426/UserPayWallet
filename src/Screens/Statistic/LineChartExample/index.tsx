@@ -4,7 +4,6 @@ import {Grid, LineChart, YAxis, XAxis} from 'react-native-svg-charts';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import SelectDropdown from 'react-native-select-dropdown';
 import {UserDataContext} from '~/Context/UserData';
-import {State} from 'react-native-gesture-handler';
 
 var select_category = '카페';
 
