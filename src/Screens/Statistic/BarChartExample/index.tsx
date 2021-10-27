@@ -5,7 +5,9 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import SelectDropdown from 'react-native-select-dropdown';
 import {UserDataContext} from '~/Context/UserData';
 
-var select_month = '09';
+let date = new Date();
+let month = date.getMonth() + 1;
+var select_month = month;
 
 const BarChartExample = () => {
     const classified_list = ["공공,사회기관", "공과금", "교육,육아", "교통,운수", "레저,스포츠", "병원,약국", "뷰티", "쇼핑", "식료품", "애완동물", "여행,숙박", "음식점", "카페"];
@@ -45,7 +47,7 @@ const BarChartExample = () => {
      
       <Text style = {{color: Colors.white, paddingTop: 20, fontSize: 17}}>        {select_month}월 지출 분류별 지출 추이</Text>
       
-      <View style={{height:300, padding:30, flexDirection: 'row'}}>
+      <View style={{height:300, padding:30, flexDirection: 'row', paddingLeft: 15}}>
           <YAxis
             data = {month}
             contentInset = { contentInset }

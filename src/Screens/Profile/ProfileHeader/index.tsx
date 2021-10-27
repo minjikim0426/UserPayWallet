@@ -60,17 +60,3 @@ const ProfileHeader = ({name}: Props) => {
 };
 
 export default ProfileHeader;
-
-/*
- <Button
-          label="프로필 수정"
-          style={{
-            borderRadius: 4,
-            backgroundColor: '#FEFFFF',
-            borderWidth: 1,
-            borderColor: '#D3D3D3',
-            height: 20,
-          }}
-          color="#292929"
-        />
-*/

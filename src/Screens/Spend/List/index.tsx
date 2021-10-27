@@ -4,7 +4,7 @@ import SelectDropdown from 'react-native-select-dropdown';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {UserDataContext} from '~/Context/UserData';
 
-var select_month = '09';
+var select_month = '10';
 
 const List = () => {
   const columns = ['사용내역', '지출분류', '금액'];

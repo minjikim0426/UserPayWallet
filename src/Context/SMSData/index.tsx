@@ -37,7 +37,8 @@ const SMSDataContextProvider = ({children}: Props) => {
   const classification_list = {
     '공공,사회기관':
       '경찰서 경찰청 공공,행정시설 전화국 법원 고등법원 사법기관 사회복지 노인복지 사회복지단체 시민단체 아동복지시설 자원봉사 소방본부 소방서 입법기관 정치,정당 고용노동부 중앙행정기관 교육부 국가보은처 국방부 병무처 국토교통부 관세청 국세청 기획재정부 농림축산식품부',
-    공과금: 'SK텔레콤 KT LG유플러스 공사,공단',
+    공과금: 
+      'SK텔레콤 KT LG유플러스 공사,공단',
     '교육,육아':
       '문화센터 영재교육원 평생,사회교육원 도서관 독서실 수련원,연수원 연구,연구소 영,유아,아동 어린이집 놀이교육 영어교육 전문계고등학교 특수목적고등학교 대학교 전문대학 정보통신대 종교대학 중학교 초등학교 공부방 논술 속독 수학학원 영재학원 웅변,화술 입시학원 학습지',
     '교통,운수':
@@ -156,7 +157,7 @@ const SMSDataContextProvider = ({children}: Props) => {
 
       setTimeout(() => {
         if (shopname) {
-          fetch(`http://192.168.219.169:8080/api/crawl/${shopname}`)
+          fetch(`http://172.30.1.21:8080/api/crawl/${shopname}`)
             .then(res => res.json())
             .then(data => {
               console.log(data);
@@ -228,56 +229,6 @@ const SMSDataContextProvider = ({children}: Props) => {
     }
   }, [body]);
 
-  /*
-  const saveData = () => {
-    let user = auth().currentUser;
-
-    if (body && user && cname && dcategory) {
-      database().ref(`/user_wallet/${user.uid}/@${messageData.timestamp}`).set({
-        category: dcategory,
-        shop: dshop,
-        money: dmoney,
-        class: cname,
-      });
-
-      console.log('saved');
-
-      monthlyAcount();
-
-      setCname(null);
-      setDshop(null);
-      setDmoney(null);
-      setDcategory(null);
-    }
-  };
-
-
-
-
-  useEffect(() => {
-    let user = auth().currentUser;
-
-    if (body && user && cname && dcategory) {
-      database().ref(`/user_wallet/${user.uid}/@${messageData.timestamp}`).set({
-        category: dcategory,
-        shop: dshop,
-        money: dmoney,
-        class: cname,
-      });
-
-      console.log('saved');
-
-      monthlyAcount();
-
-      setCname(null);
-      setDshop(null);
-      setDmoney(null);
-      setDcategory(null);
-    }
-  }, [dcategory]);
-
-
-  */
 
   const setData = (
     category: string,

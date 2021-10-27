@@ -17,7 +17,7 @@ const UserDataContext = createContext(defaultContext);
 
 interface Props {
   children: JSX.Element | Array<JSX.Element>;
-}
+} 
 
 const UserDataContextProvider = ({children}: Props) => {
   const [category, setCategory] = useState([]);
@@ -214,10 +214,13 @@ const UserDataContextProvider = ({children}: Props) => {
   };
 
   useEffect(() => {
-    ListData('9');
+    let date = new Date();
+    let month = date.getMonth() + 1;
+
+    ListData(String(month));
     getMonthSum('카페');
-    getCategorySum('9');
-    getPercentage('9');
+    getCategorySum(String(month));
+    getPercentage(String(month));
   }, []);
 
   return (

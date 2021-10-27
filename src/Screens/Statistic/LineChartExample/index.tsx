@@ -70,7 +70,7 @@ const LineChartExample = () => {
         {'        '}
         [ {select_category} ] 사용 내역별 지출 추이
       </Text>
-      <View style={{height: 300, padding: 30, flexDirection: 'row'}}>
+      <View style={{height: 300, padding: 30, flexDirection: 'row', paddingLeft: 15}}>
         <YAxis
           data={category}
           contentInset={contentInset}

@@ -6,7 +6,9 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 import SelectDropdown from 'react-native-select-dropdown';
 import {UserDataContext} from '~/Context/UserData';
 
-var select_month = '9';
+let date = new Date();
+let month = date.getMonth() + 1;
+var select_month = month;
 
 const Percentage_Info = Styled.Text`
   font-size: 10px;
@@ -76,6 +78,7 @@ const PieChartExample = () => {
                     { percentage: percentage[5], color: '#546de5' }, 
                     { percentage: percentage[6], color: '#8854d0' },
                     { percentage: percentage[7], color: '#1e272e' }, 
+                    { percentage: percentage[8], color: '#ea8685' },
                     { percentage: percentage[9], color: '#dcdde1' }, 
                     { percentage: percentage[10], color: '#e056fd' }, 
                     { percentage: percentage[11], color: '#ffdab9' },
